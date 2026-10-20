@@ -1,0 +1,11 @@
+# Local environments, generated files, and private credentials.
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.DS_Store
+*.pyc
+.jupyter/
+PUSH-LOG.md
+config/.env
+DM2026-Lab2-AgentPipeline-Grading-Reference.ipynb
+DM2026-Lab2-Master-Grading-Reference.ipynb
