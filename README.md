@@ -46,6 +46,15 @@ flowchart LR
 
 Follow the [Lab 2 environment setup guide](https://github.com/william-code87/DM2026-Lab2-Announcement.git) before starting this repository. It covers installing Python and `uv`, installing dependencies, configuring an API key, and opening JupyterLab.
 
+Once `uv` is installed, two commands from this repository's root are all you need:
+
+```bash
+uv sync              # creates the environment and installs the pinned dependencies
+uv run jupyter lab   # starts JupyterLab using that environment
+```
+
+`uv sync` reads `pyproject.toml` and `uv.lock`, so every student ends up with identical versions. It needs Python 3.11 and about 6 GB of free disk, and the first run takes a while; later runs are immediate. Always start the notebooks with `uv run jupyter lab` rather than activating anything by hand, and do not install packages yourself: the chat widget in the AgentPipeline notebook only works with the pinned versions.
+
 Run the notebooks from this repository's root directory so their relative paths resolve correctly. The supplied SemEval data is already in `data/semeval/`. Run the Master through Section 9 before opening the AgentPipeline: that section creates the workspace the agent needs. The Homework notebook may be run separately for the competition.
 
 ## Where everything is
@@ -82,7 +91,7 @@ Keep `lab2_workspace/` locally until you finish the AgentPipeline; it is not req
 
 ## How to work with the agent
 
-The agent can read existing results immediately through its inspection tools. Before the first use of a tool that runs an experiment or shows tweets, it requests access. Request the specific step, approve the named tool after reading the request, then send the run request again. Granting access and running a tool take separate messages. The agent runs at most one tool per message.
+The agent can read existing results immediately through its inspection tools. Before the first use of a tool that runs an experiment or shows tweets, it requests access to all five experiment tools at once. Request the specific step, approve after reading the request, then send the run request again: approving and running take separate messages, because the agent runs at most one tool per message. That single approval covers all five for the rest of the session, including the tools you have not asked for yet.
 
 For Exercise 14, reproduce a Master's classifier result, change one setting across at least four values, and compare the runs. For Exercise 15, compare TF-IDF, Word2Vec, and MiniLM retrieval on two queries you wrote, then evaluate TF-IDF and MiniLM at the same *k*. For Exercise 16, inspect a classifier's most frequent confusion and audit its explanation against up to five actual tweets. Record the exact `result_id`s, numbers, and `doc_id`s in your answers; check the tool tables before trusting the agent's prose.
 
