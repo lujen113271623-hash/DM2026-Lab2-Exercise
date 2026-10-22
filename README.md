@@ -53,7 +53,7 @@ uv sync              # creates the environment and installs the pinned dependenc
 uv run jupyter lab   # starts JupyterLab using that environment
 ```
 
-`uv sync` reads `pyproject.toml` and `uv.lock`, so every student ends up with identical versions. It needs Python 3.11 and about 6 GB of free disk, and the first run takes a while; later runs are immediate. Always start the notebooks with `uv run jupyter lab` rather than activating anything by hand, and do not install packages yourself: the chat widget in the AgentPipeline notebook only works with the pinned versions.
+`uv sync` reads `pyproject.toml` and `uv.lock`, so every student ends up with identical versions. It needs Python 3.11 and about 3 GB of free disk: the environment itself is 1.7 GB, `uv` keeps the files it downloaded in a cache, and the MiniLM model in Section 5 adds 88 MB the first time it runs. That first `uv sync` takes a while; later runs are immediate. Always start the notebooks with `uv run jupyter lab` rather than activating anything by hand, and do not install packages yourself: the chat widget in the AgentPipeline notebook only works with the pinned versions.
 
 Run the notebooks from this repository's root directory so their relative paths resolve correctly. The supplied SemEval data is already in `data/semeval/`. Run the Master through Section 9 before opening the AgentPipeline: that section creates the workspace the agent needs. The Homework notebook may be run separately for the competition.
 

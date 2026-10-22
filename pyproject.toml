@@ -41,3 +41,14 @@ dependencies = [
 
 [tool.uv]
 package = false
+
+# This lab is CPU-only (no GPU dependencies), so take torch from PyTorch's CPU
+# wheel index. The default index ships the CUDA build on Linux, which adds about
+# 4 GB of NVIDIA packages that nothing here uses.
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
