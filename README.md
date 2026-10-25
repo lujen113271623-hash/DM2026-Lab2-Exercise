@@ -14,7 +14,7 @@ Your map of the lab: what to do, in what order, where files live, and what to su
 | Lab submission deadline | November 25, 11:59 pm, as stated in the Homework notebook. |
 | Exercises | 13 in the Master notebook; 3 in the AgentPipeline notebook. |
 | Grading | Part 1: 40 points; Part 2: 30 points; Part 3: 30 points |
-| Competition | [Data Mining Class Kaggle Competition](https://www.kaggle.com/competitions/2026-dm-lab-2-private-competition). |
+| Competition | [Data Mining Class Kaggle Competition](https://www.kaggle.com/t/d99def2e62194b0d8f633267c32e6d1e). |
 | Submission route | Push your work to your repository, then submit its link and a backup ZIP on NTU COOL. See [What to submit](#what-to-submit-and-how-it-is-graded). |
 
 ## The order to work in
